@@ -20,12 +20,31 @@ const first = function (arr, n) {
 
 };
 
-const last = function () {
+const last = function (arr, n) {
+    let temp = []
 
+    if (n === undefined) {
+        return arr[arr.length - 1]
+    } 
+    
+    if (arr.length < n) {
+        return arr
+    }
+
+    // for (let i = arr.length - 1; i < n; i--) {
+    //     temp.push(arr[i])
+    // }
+
+    for(let i = arr.length - n; i < arr.length; i++) {
+        temp.push(arr[i])
+    }
+
+    return temp
 };
+console.log(last([1, 2, 3], 2))
 
 const each = function () {
-
+    
 };
 
 const indexOf = function () {
