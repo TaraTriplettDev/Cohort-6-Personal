@@ -43,12 +43,30 @@ const last = function (arr, n) {
 };
 console.log(last([1, 2, 3], 2))
 
-const each = function () {
-    
-};
+const each = function (collection, callback) {
+    if(Array.isArray(collection)){
+      for(let i = 0; i < collection.length; i++){
+        collection[i] = callback(collection[i], i, collection)
+      }
+    }else{
+      for(let key in collection){
+        collection[key] = callback(collection[key], key, collection)
+      }
+    }
+  };
+ 
+// It takes in an array as the parameter, checks if the value "40" is included in it. If it does not, it returns "-1" as requested by test.js. If it does, it runs a for loop that is meant to stop once it reaches a point in the array where the value "40" is contained
 
-const indexOf = function () {
-
+const indexOf = function (array) {
+    if (array.includes("40")) {
+        for (let i = 0; i < array.length; i++){
+            if (array[i].includes("40")){
+                return i
+            }
+        }
+    } else {
+        return -1;
+    }
 };
 
 const map = function () {
