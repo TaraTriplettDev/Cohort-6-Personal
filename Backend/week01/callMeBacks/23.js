@@ -60,7 +60,7 @@ const each = function (collection, callback) {
 const indexOf = function (array) {
     if (array.includes("40")) {
         for (let i = 0; i < array.length; i++){
-            if (array[i].includes("40")){
+            if (array[i].value = "40"){
                 return i
             }
         }
